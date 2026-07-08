@@ -8,17 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.scenePhase) private var scenePhase
     @EnvironmentObject var settings: Settings
 
     var body: some View {
-        VStack {
-            Text("Hello, world!")
-                .padding()
-            Text("Current theme: \(settings.themeMode.rawValue.capitalized)")
-            Text("Background colour: \(settings.backgroundColour.rawValue.capitalized)")
+        VStack(spacing: 20) {
+            Text("Theme: \(settings.themeMode.rawValue.capitalized)")
+            Text("Background: \(settings.backgroundColour.rawValue.capitalized)")
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(settings.colourValue().ignoresSafeArea())
+        .onChange(of: scenePhase) { newPhase in
+            if newPhase == .active {
+                settings.load()
+            }
+        }
     }
 }
 
