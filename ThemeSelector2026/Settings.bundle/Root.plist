@@ -56,6 +56,52 @@
 			<key>MaximumValueImage</key>
 			<string></string>
 		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Theme Mode</string>
+			<key>Key</key>
+			<string>theme_mode</string>
+			<key>DefaultValue</key>
+			<string>system</string>
+			<key>Values</key>
+			<array>
+				<string>system</string>
+				<string>light</string>
+				<string>dark</string>
+			</array>
+			<key>Titles</key>
+			<array>
+				<string>System</string>
+				<string>Day (Light)</string>
+				<string>Night (Dark)</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Background Colour</string>
+			<key>Key</key>
+			<string>background_colour</string>
+			<key>DefaultValue</key>
+			<string>white</string>
+			<key>Values</key>
+			<array>
+				<string>white</string>
+				<string>lightGray</string>
+				<string>yellow</string>
+				<string>blue</string>
+			</array>
+			<key>Titles</key>
+			<array>
+				<string>White</string>
+				<string>Light Gray</string>
+				<string>Yellow</string>
+				<string>Blue</string>
+			</array>
+		</dict>
 	</array>
 </dict>
 </plist>
