@@ -8,17 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var settings: Settings
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!!")
+            Text("Hello, world!")
+                .padding()
+            Text("Current theme: \(settings.themeMode.rawValue.capitalized)")
+            Text("Background colour: \(settings.backgroundColour.rawValue.capitalized)")
         }
-        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(settings.colourValue().ignoresSafeArea())
     }
 }
 
-#Preview {
-    ContentView()
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+            .environmentObject(Settings())
+    }
 }
